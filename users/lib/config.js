@@ -30,3 +30,7 @@ AccountsTemplates.addField({
 AccountsTemplates.configureRoute('signIn', {
   path: '/login'
 })
+
+AccountsTemplates.configure({
+  forbidClientAccountCreation: true
+})
