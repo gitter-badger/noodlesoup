@@ -8,3 +8,5 @@ meteor-platform
 iron:router
 mquandalle:jade
 accounts-password
+fourseven:scss
+reywood:bootstrap3-sass
