@@ -1,5 +1,6 @@
 template(name="layoutHeader")
-  nav.navbar.navbar-default.navbar-fixed-top
-    .container-fluid
-      .navbar-header
-        .navbar-brand Noodlesoup
+  .ui.fixed.green.inverted.menu
+    .header.item Noodlesoup
+    .right.menu
+      if currentUser
+        .item Ohayou, #{currentUser.username}

@@ -9,7 +9,9 @@ iron:router
 mquandalle:jade
 accounts-password
 fourseven:scss
-reywood:bootstrap3-sass
 useraccounts:bootstrap
 aldeed:collection2
 meteorhacks:kadira
+semantic:ui
+jquery
+flemay:less-autoprefixer
