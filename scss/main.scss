@@ -1,1 +1,6 @@
 @import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
+
+// fix navbar overlapping the other content
+body {
+  padding-top: 70px;
+}
