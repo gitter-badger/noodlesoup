@@ -1,0 +1,9 @@
+template(name="postNew")
+  .sixteen.wide.column
+    h1 New Post
+    +autoForm collection="Posts" id="insertPostForm" type="insert" template="semanticUI"
+      +afQuickField name="title" placeholder="My Great Post About Birds"
+      +afQuickField name="disclaimer" rows=3 placeholder="Please, only use this in situations where it is appropriate"
+      +afQuickField name="body" rows=7 placeholder="Here is why Birds are the best animals ever:"
+      +afQuickField name="tag" placeholder="e.g. anime"
+      button(type="submit").ui.button.primary Submit
