@@ -1,2 +1,9 @@
-core/client/semantic/
-!core/client/semantic/custom.semantic.json
+.meteor/local/
+
+core/client/semantic/definitions/*
+core/client/semantic/site/*
+core/client/semantic/themes/*
+core/client/semantic/.custom.semantic.json
+core/client/semantic/semantic.less
+core/client/semantic/theme.config.import.less
+core/client/semantic/theme.import.less
