@@ -6,4 +6,9 @@ template(name="postNew")
       +afQuickField name="disclaimer" rows=3 placeholder="Please, only use this in situations where it is appropriate"
       +afQuickField name="body" rows=7 placeholder="Here is why Birds are the best animals ever:"
       +afQuickField name="tag" placeholder="e.g. anime"
+      .ui.icon.message
+        i.warning.icon
+        .content.
+          Please do not create a new tag. Instead, <a href="/write/tags">look at our list of tags</a> and see which one
+          best applies to your post.
       button(type="submit").ui.button.primary Submit

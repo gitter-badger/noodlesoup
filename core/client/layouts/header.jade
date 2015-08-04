@@ -1,6 +1,6 @@
 template(name="layoutHeader")
   .ui.fixed.green.inverted.menu
-    .header.item Noodlesoup
+    a.header.item(href="/") Noodlesoup
     .right.menu
       if currentUser
         .item Ohayou, #{currentUser.username}!
