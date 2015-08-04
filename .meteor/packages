@@ -9,7 +9,7 @@ iron:router
 mquandalle:jade
 accounts-password
 fourseven:scss
-useraccounts:bootstrap
+useraccounts:semantic-ui
 aldeed:collection2
 meteorhacks:kadira
 semantic:ui
