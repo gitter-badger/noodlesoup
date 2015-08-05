@@ -18,7 +18,11 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   tag: {
     type: String,
     label: 'Select a tag for where to categorize this post'
+  },
+  slug: {
+    type: String
   }
 })
 
 Posts.attachSchema(Noodlesoup.schemas.Post)
+Posts.friendlySlugs('title')
