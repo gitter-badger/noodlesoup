@@ -1,8 +1,8 @@
 template(name="postLatestOne")
-  .item
+  a.item(href="/p/#{slug}")
     .content
       .header #{title}
       //- really weird, why do i have to use spacebars syntax here?
       .description {{trimBody body}} 
       .extra
-        .ui.right.floated.red.tag.label #{tag}
+        a.ui.right.floated.red.tag.label(href="/t/#{tag}") #{tag}
