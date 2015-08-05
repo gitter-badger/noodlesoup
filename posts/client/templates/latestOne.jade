@@ -1,0 +1,8 @@
+template(name="postLatestOne")
+  .item
+    .content
+      .header #{title}
+      //- really weird, why do i have to use spacebars syntax here?
+      .description {{trimBody body}} 
+      .extra
+        .ui.right.floated.red.tag.label #{tag}
