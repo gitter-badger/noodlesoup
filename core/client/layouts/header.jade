@@ -1,8 +1,7 @@
 template(name="layoutHeader")
   .ui.fixed.green.inverted.menu
-    a.header.item(href="/") Noodlesoup
+    a.header.item(href="/") Noodlesoup Writers
     .right.menu
-      if currentUser
-        .item Ohayou, #{currentUser.username}!
-        a.item(href="/write/new") New post
-        a.item(href="/logout") Logout
+      .item Ohayou, #{currentUser.username}!
+      a.item(href="/write/new") New post
+      a.item(href="/logout") Logout
