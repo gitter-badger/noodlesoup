@@ -6,5 +6,5 @@ template(name="postListOne")
       .description {{trimBody body}} 
       .extra
         .right.floated
-          span.gray(style="margin-right: 10px;") {{getTimestamp createdAt}}
+          span.gray(style="margin-right: 10px;") #{createdAt}
           a.ui.red.tag.label(href="/t/#{tag}") #{tag}

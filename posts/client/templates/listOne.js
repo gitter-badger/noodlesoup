@@ -7,9 +7,5 @@ Template.postListOne.helpers({
       newBody.concat('...')
     }
     return newBody
-  },
-  getTimestamp: function (date) {
-    var mmt = moment(date)
-    return mmt.format('Do MMM YYYY')
   }
 })

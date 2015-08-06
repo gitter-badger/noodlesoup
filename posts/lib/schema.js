@@ -20,7 +20,7 @@ Noodlesoup.schemas.Post = new SimpleSchema({
     label: 'Select a tag for where to categorize this post'
   },
   createdAt: {
-    type: Date
+    type: String
   },
   author: {
     type: String
