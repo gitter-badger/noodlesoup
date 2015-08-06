@@ -19,6 +19,9 @@ Noodlesoup.schemas.Post = new SimpleSchema({
     type: String,
     label: 'Select a tag for where to categorize this post'
   },
+  author: {
+    type: String
+  },
   slug: {
     type: String
   }

@@ -6,6 +6,18 @@ function red (self) {
   }
 }
 
+// POST FRONTEND
+
+Router.route('/p/:post_slug', function () {
+  this.render('postOne', {
+    data: function () {
+      return Posts.findOne({slug: this.params.post_slug})
+    }
+  })
+})
+
+// WRITER BACKEND
+
 Router.route('/write/new', function () {
   red(this)
   this.render('postNew')
