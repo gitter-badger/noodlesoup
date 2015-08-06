@@ -1,8 +1,10 @@
-template(name="postLatestOne")
+template(name="postListOne")
   a.item(href="/p/#{slug}")
     .content
       .header #{title}
       //- really weird, why do i have to use spacebars syntax here?
       .description {{trimBody body}} 
       .extra
-        a.ui.right.floated.red.tag.label(href="/t/#{tag}") #{tag}
+        .right.floated
+          span.gray(style="margin-right: 10px;") {{getTimestamp createdAt}}
+          a.ui.red.tag.label(href="/t/#{tag}") #{tag}
