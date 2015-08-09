@@ -1,9 +1,10 @@
 template(name="layoutHeader")
   .ui.fixed.inverted.large.black.menu
     .ui.page.container
-      .item.noodlesoup.header noodlesoup
-      .right.menu
-        .borderless.item Ohayou, 
-          .noodlesoup.username #{currentUser.username}
-        a.item(href="/write/new") New post
-        a.item(href="/logout") Logout
+      a.item.noodlesoup.header(href="/") noodlesoup
+      if currentUser
+        .right.menu
+          .borderless.item Ohayou, 
+            .noodlesoup.username #{currentUser.username}
+          a.item(href="/write/new") New post
+          a.item(href="/logout") Logout
