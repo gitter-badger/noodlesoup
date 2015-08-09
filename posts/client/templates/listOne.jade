@@ -2,6 +2,8 @@ template(name="postListOne")
   a.item(href="/p/#{slug}")
     .content
       .header #{title}
+        if disclaimer
+          .ui.red.tiny.label Disclaimer
       .description #{summary} 
       .extra
         .right.floated

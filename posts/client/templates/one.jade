@@ -1,6 +1,12 @@
 template(name="postOne")
   .twelve.wide.column
     h1 #{title}
+    if disclaimer
+      .ui.red.icon.message
+        i.warning.icon
+        .content
+          .header Disclaimer
+          p #{disclaimer}
     p 
       +markdown
         #{body}
