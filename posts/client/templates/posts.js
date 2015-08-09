@@ -10,3 +10,9 @@ Template.postTag.helpers({
     return Posts.find({tag: this.tag_name}, {limit: 5})
   }
 })
+
+Template.postAuthor.helpers({
+  posts: function () {
+    return Posts.find({author: this.author_name}, {limit: 5})
+  }
+})

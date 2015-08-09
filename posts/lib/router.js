@@ -24,6 +24,14 @@ Router.route('/t/:tag_name', function () {
   })
 })
 
+Router.route('/a/:author_name', function () {
+  this.render('postAuthor', {
+    data: {
+      author_name: this.params.author_name
+    }
+  })
+})
+
 // WRITER BACKEND
 
 Router.route('/write/new', function () {

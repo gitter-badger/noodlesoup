@@ -1,0 +1,6 @@
+template(name="postAuthor")
+  .sixteen.wide.column
+    h1 #{author_name}'s posts
+    .ui.divided.items
+      each posts
+        +listOne
