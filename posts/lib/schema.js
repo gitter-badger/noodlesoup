@@ -11,6 +11,11 @@ Noodlesoup.schemas.Post = new SimpleSchema({
     label: 'An optional disclaimer',
     optional: true
   },
+  summary: {
+    type: String,
+    max: 300,
+    label: 'Summarize your article. No markdown.'
+  },
   body: {
     type: String,
     label: 'The text'
