@@ -9,3 +9,8 @@ img {
 .footer-container {
   margin-top: 70px;
 }
+
+.ns-copyright,
+.ns-main-menu {
+  background-image: url(img/background.png);
+}

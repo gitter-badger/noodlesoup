@@ -16,6 +16,14 @@ Router.route('/p/:post_slug', function () {
   })
 })
 
+Router.route('/t/:tag_name', function () {
+  this.render('postTag', {
+    data: {
+      tag_name: this.params.tag_name
+    }
+  })
+})
+
 // WRITER BACKEND
 
 Router.route('/write/new', function () {

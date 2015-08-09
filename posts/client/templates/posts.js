@@ -4,3 +4,9 @@ Template.postLatest.helpers({
     return Posts.find({}, {limit: 5}).fetch().reverse()
   }
 })
+
+Template.postTag.helpers({
+  posts: function () {
+    return Posts.find({tag: this.tag_name}, {limit: 5})
+  }
+})
