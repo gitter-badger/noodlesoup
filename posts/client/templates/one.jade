@@ -1,4 +1,5 @@
 template(name="postOne")
+  //- Main content
   .twelve.wide.column
     h1 #{title}
     if disclaimer
@@ -13,6 +14,7 @@ template(name="postOne")
     br
     a(href="/t/#{tag}").ui.red.tag.label #{tag}
     +disqus
+  //- Sidebar
   .four.wide.column
     a(href="/a/#{author}")
       img(src="{{getGravatarUrl author}}").ui.avatar.image
