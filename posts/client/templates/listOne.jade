@@ -2,8 +2,7 @@ template(name="postListOne")
   a.item(href="/p/#{slug}")
     .content
       .header #{title}
-      //- really weird, why do i have to use spacebars syntax here?
-      .description {{trimBody body}} 
+      .description #{summary} 
       .extra
         .right.floated
           span.gray(style="margin-right: 10px;") #{author}, #{createdAt}
