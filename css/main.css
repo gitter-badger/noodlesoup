@@ -2,6 +2,10 @@ body {
   padding-top: 40px;
 }
 
+img {
+  width: 100%;
+}
+
 .footer-container {
   margin-top: 70px;
 }
