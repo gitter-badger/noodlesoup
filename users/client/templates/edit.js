@@ -1,8 +1,20 @@
 Template.userEdit.helpers({
-  users: function () {
-    return Users
+  getRealname: function () {
+    return Users.find({_id: Meteor.userId()}).fetch()[0].profile.realname
   },
-  user: function () {
-    return Meteor.user()
+  getBio: function () {
+    return Users.find({_id: Meteor.userId()}).fetch()[0].profile.bio
+  }
+})
+
+Template.userEdit.events({
+  'submit form': function (event) {
+    event.preventDefault()
+    // set to the current value
+    var realname = event.target.realname.value || Users.find({_id: Meteor.userId()}).fetch()[0].profile.realname
+      , bio = event.target.bio.value || Users.find({_id: Meteor.userId()}).fetch()[0].profile.bio
+    
+    Users.update({_id: Meteor.userId()}, {$set: {profile: {realname: realname, bio: bio}}})
+    Router.go('/')
   }
 })

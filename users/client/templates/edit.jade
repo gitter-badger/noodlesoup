@@ -1,2 +1,11 @@
 template(name="userEdit")
-  
+  .sixteen.wide.column
+    h1 Edit your profile
+    form#updateUserForm.ui.form
+      .field 
+        label(for="realname") Your name:
+        input(type="text" name="realname" value="#{getRealname}")
+      .field
+        label(for="bio") Bio:
+        textarea(name="bio" rows="2") #{getBio}
+      button(type="submit").ui.button.primary Save changes

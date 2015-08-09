@@ -82,6 +82,7 @@ ui@1.0.6
 underscore@1.0.3
 url@1.0.4
 useraccounts:core@1.12.0
+useraccounts:iron-routing@1.12.0
 useraccounts:semantic-ui@1.12.0
 webapp@1.2.0
 webapp-hashing@1.0.3

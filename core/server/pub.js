@@ -7,7 +7,8 @@ Meteor.publish('userData', function () {
     fields: {
       username: 1,
       emails: 1,
-      profile: 1
+      'profile.realname': 1,
+      'profile.bio': 1
     }
   })
 })

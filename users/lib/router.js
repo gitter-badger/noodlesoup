@@ -1,5 +1,5 @@
 Router.route('/user', function () {
-  if (Meteor.user()) {
+  if (Meteor.userId()) {
     this.render('userEdit')
   } else {
     this.redirect('/')
