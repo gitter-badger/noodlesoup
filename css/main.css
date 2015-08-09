@@ -11,6 +11,19 @@ img {
 }
 
 .ns-copyright,
-.ns-main-menu {
+.item.noodlesoup.header {
   background-image: url(img/background.png) !important;
+}
+
+.noodlesoup.username {
+  color: #f2711c;
+}
+
+.noodlesoup.username:before {
+  content: "\00a0";
+}
+
+.noodlesoup.username:after {
+  color: #fff;
+  content: "!";
 }

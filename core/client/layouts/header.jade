@@ -1,6 +1,9 @@
 template(name="layoutHeader")
-  .ui.fixed.inverted.menu.ns-main-menu
-    .right.menu
-      .item Ohayou, #{currentUser.username}!
-      a.item(href="/write/new") New post
-      a.item(href="/logout") Logout
+  .ui.fixed.inverted.large.black.menu
+    .ui.page.container
+      .item.noodlesoup.header noodlesoup
+      .right.menu
+        .borderless.item Ohayou, 
+          .noodlesoup.username #{currentUser.username}
+        a.item(href="/write/new") New post
+        a.item(href="/logout") Logout
