@@ -1,0 +1,8 @@
+template(name="postEdit")
+  .sixteen.wide.column
+    h1 Edit "#{title}"
+    +autoForm collection="Posts" id="updatePostForm" type="update" doc=getDoc template="semanticUI"
+      +afQuickField name="title"
+      +afQuickField name="summary" rows=2
+      +afQuickField name="body" rows=7
+      button(type="submit").ui.button.primary Submit

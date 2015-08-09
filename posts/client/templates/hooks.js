@@ -11,5 +11,10 @@ AutoForm.hooks({
     onSuccess: function (formType, result) {
       Router.go('/')
     }
+  },
+  updatePostForm: {
+    onSuccess: function (formType, result) {
+      Router.go('/p/' + this.currentDoc.slug)
+    }
   }
 })

@@ -38,3 +38,17 @@ Router.route('/write/new', function () {
   red(this)
   this.render('postNew')
 })
+
+Router.route('/p/:post_slug/edit', function () {
+  red(this)
+  var post = Posts.findOne({slug: this.params.post_slug})
+  // make sure only the creator can edit
+  if (post.author !== Meteor.user().username) {
+    this.redirect('/p/' + this.params.post_slug)
+  }
+  this.render('postEdit', {
+    data: function () {
+      return post
+    }
+  })
+})

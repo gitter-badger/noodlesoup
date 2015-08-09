@@ -1,5 +1,16 @@
 Users = Meteor.users
 
+Noodlesoup.schemas.UserProfile = new SimpleSchema({
+  realname: {
+    type: String,
+    optional: true
+  },
+  bio: {
+    type: String,
+    optional: true
+  }
+})
+
 Noodlesoup.schemas.User = new SimpleSchema({
   _id: {
     type: String,
@@ -25,12 +36,8 @@ Noodlesoup.schemas.User = new SimpleSchema({
     optional: true,
     blackbox: true
   },
-  realname: {
-    type: String,
-    optional: true
-  },
-  bio: {
-    type: String,
+  profile: {
+    type: Noodlesoup.schemas.UserProfile,
     optional: true
   }
 })

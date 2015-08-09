@@ -3,6 +3,10 @@ if (Users.find().count() === 0) {
   Accounts.createUser({
     username: 'admin',
     email: 'jona@schisma.co',
-    password: 'supersecret'
+    password: 'supersecret',
+    profile: {
+      realname: 'Ad Min',
+      bio: 'A cool man.'
+    }
   })
 }
