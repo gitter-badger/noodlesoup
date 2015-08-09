@@ -12,5 +12,5 @@ img {
 
 .ns-copyright,
 .ns-main-menu {
-  background-image: url(img/background.png);
+  background-image: url(img/background.png) !important;
 }

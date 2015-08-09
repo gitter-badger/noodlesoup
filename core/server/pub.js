@@ -5,6 +5,7 @@ Meteor.publish('posts', function () {
 Meteor.publish('userData', function () {
   return Users.find({}, {
     fields: {
+      username: 1,
       emails: 1
     }
   })
