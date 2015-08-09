@@ -19,7 +19,6 @@ email@1.0.6
 fabienb4:autoform-semantic-ui@0.4.6
 fastclick@1.0.3
 flemay:less-autoprefixer@1.1.0
-fourseven:scss@3.2.0
 geojson-utils@1.0.3
 html-tools@1.0.4
 htmljs@1.0.4
@@ -58,6 +57,7 @@ mquandalle:jade@0.4.3
 mquandalle:jade-compiler@0.4.3
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
+obvio171:disqus@1.0.0
 ongoworks:security@1.2.0
 ordered-dict@1.0.3
 perak:markdown@1.0.5

@@ -6,10 +6,12 @@ template(name="postOne")
         #{body}
     br
     a(href="/t/#{tag}").ui.red.tag.label #{tag}
+    +disqus
   .four.wide.column
     a(href="/a/#{author}")
       img(src="{{getGravatarUrl author}}").ui.avatar.image
       span #{author}
+    .gray posted on #{createdAt}
     if isAuthor author
       .ui.compact.message.
         This post is yours. Want to <a href="/p/#{slug}/edit">edit</a> it?
