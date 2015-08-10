@@ -7,12 +7,12 @@ Template.postLatest.helpers({
 
 Template.postTag.helpers({
   posts: function () {
-    return Posts.find({tag: this.tag_name}, {limit: 5})
+    return Posts.find({tag: this.tag_name}, {limit: 5}).fetch().reverse()
   }
 })
 
 Template.postAuthor.helpers({
   posts: function () {
-    return Posts.find({author: this.author_name}, {limit: 5})
+    return Posts.find({author: this.author_name}, {limit: 5}).fetch().reverse()
   }
 })

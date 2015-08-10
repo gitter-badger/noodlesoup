@@ -7,3 +7,5 @@ core/client/semantic/.custom.semantic.json
 core/client/semantic/semantic.less
 core/client/semantic/theme.config.import.less
 core/client/semantic/theme.import.less
+
+mup.json
