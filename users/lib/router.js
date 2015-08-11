@@ -13,3 +13,15 @@ Router.route('/gentoken', function () {
     this.redirect('/')
   }
 })
+
+Router.route('/a/:user_name/edit', function () {
+  if (Meteor.userId() && Roles.userIsInRole(Users.findOne({username: this.params.user_name})._id, 'admin')) {
+    this.render('userAdmin', {
+      data: function () {
+        return Users.findOne({username: this.params.user_name})
+      }
+    })
+  } else {
+    this.redirect('/')
+  }
+})

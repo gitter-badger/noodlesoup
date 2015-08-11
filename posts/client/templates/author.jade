@@ -1,6 +1,9 @@
 template(name="postAuthor")
   .sixteen.wide.column
-    h1 #{author_name}'s posts
+    h1.ui.header
+      | #{author_name}'s posts
+      if isInRole 'admin'
+        a.ui.green.mini.button(href="/a/#{author_name}/edit") Edit
     .ui.divided.items
       each posts
         +listOne

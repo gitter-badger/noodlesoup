@@ -1,0 +1,14 @@
+template(name="userAdmin")
+  h1 Administrate #{username}
+  .sixteen.wide.column
+    .ui.checkbox
+      if isNotAdmin
+        button.ui.green.button Give Admin
+      if isWriter
+        button.ui.red.button Remove Writer
+      else
+        button.ui.green.button Give Writer
+      if isPR
+        button.ui.red.button Remove PR
+      else
+        button.ui.green.button Give PR
