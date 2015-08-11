@@ -3,12 +3,12 @@ template(name="userAdmin")
   .sixteen.wide.column
     .ui.checkbox
       if isNotAdmin
-        button.ui.green.button Give Admin
+        button.ui.green.button#give(data-give="admin") Give Admin
       if isWriter
-        button.ui.red.button Remove Writer
+        button.ui.red.button#remove(data-remove="writer") Remove Writer
       else
-        button.ui.green.button Give Writer
+        button.ui.green.button#give(data-give="writer") Give Writer
       if isPR
-        button.ui.red.button Remove PR
+        button.ui.red.button#remove(data-remove="pr") Remove PR
       else
-        button.ui.green.button Give PR
+        button.ui.green.button#give(data-give="pr") Give PR

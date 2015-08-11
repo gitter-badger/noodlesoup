@@ -1,8 +1,8 @@
-Security.defineMethod('ifIsCurrentUser', {
+Security.defineMethod('ifIsCurrentUserOrAdmin', {
   fetch: [],
   transform: null,
   deny: function (type, arg, userId, doc) {
-    return userId !== doc._id
+    return (userId !== doc._id) || !Roles.userIsInRole(userId, 'admin')
   }
 })
 
@@ -18,6 +18,5 @@ Security.defineMethod('ifIsCurrentUsersPost', {
 
 Posts.permit(['insert']).ifLoggedIn().apply()
 Posts.permit(['update', 'remove']).ifIsCurrentUsersPost().ifLoggedIn().apply()
-Users.permit(['insert']).ifLoggedIn().apply()
-Users.permit(['update', 'remove']).ifIsCurrentUser().ifLoggedIn().apply()
+Users.permit(['update', 'remove']).ifIsCurrentUserOrAdmin().ifLoggedIn().apply()
 Tokens.permit(['insert']).ifLoggedIn().apply()
