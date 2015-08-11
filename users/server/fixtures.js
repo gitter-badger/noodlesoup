@@ -1,11 +1,11 @@
 if (Users.find().count() === 0) {
   // if no users exist, create an initial one
   Accounts.createUser({
-    username: 'admin',
+    username: 'schisma',
     email: 'jona@schisma.co',
     password: 'supersecret',
     profile: {
-      realname: 'Ad Min',
+      realname: 'Jona H.',
       bio: 'A cool man.'
     }
   })

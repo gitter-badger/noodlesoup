@@ -6,7 +6,7 @@ Security.defineMethod('ifIsCurrentUser', {
   }
 })
 
-Security.defineMethod('ifIsCurrentUserPost', {
+Security.defineMethod('ifIsCurrentUsersPost', {
   fetch: [],
   transform: null,
   deny: function (type, arg, userId, doc) {
@@ -17,7 +17,7 @@ Security.defineMethod('ifIsCurrentUserPost', {
 
 
 Posts.permit(['insert']).ifLoggedIn().apply()
-Posts.permit(['update', 'remove']).ifIsCurrentUserPost().ifLoggedIn().apply()
+Posts.permit(['update', 'remove']).ifIsCurrentUsersPost().ifLoggedIn().apply()
 Users.permit(['insert']).ifLoggedIn().apply()
 Users.permit(['update', 'remove']).ifIsCurrentUser().ifLoggedIn().apply()
 Tokens.permit(['insert']).ifLoggedIn().apply()
