@@ -3,6 +3,7 @@ template(name="postNew")
     h1 New Post
     +autoForm collection="Posts" id="insertPostForm" type="insert" template="semanticUI"
       +afQuickField name="title" placeholder="My Great Post About Birds"
+      +afQuickField name="thumbnail" placeholder="http://imgur.com/BiRd5"
       +afQuickField name="disclaimer" rows=3 placeholder="Please, only use this in situations where it is appropriate"
       +afQuickField name="summary" rows=2 placeholder="This article explains why birds are great!"
       +afQuickField name="body" rows=7 placeholder="Here is why Birds are the best animals ever:"

@@ -32,6 +32,11 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   },
   slug: {
     type: String
+  },
+  thumbnail: {
+    type: String,
+    optional: true,
+    regEx: SimpleSchema.RegEx.Url
   }
 })
 
