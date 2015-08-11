@@ -3,6 +3,8 @@ Template.staticAbout.helpers({
     return Users.find()
   },
   getGravatarUrl: function (emails) {
-    return Gravatar.imageUrl(emails[0].address)
+    return Gravatar.imageUrl(emails[0].address, {
+      size: 300
+    })
   }
 })
