@@ -27,10 +27,34 @@ AccountsTemplates.addField({
   errStr: 'Invalid password.'
 })
 
+AccountsTemplates.addField({
+  _id: 'token',
+  type: 'text',
+  displayName: "Invite token",
+  required: true,
+  minLength: 9,
+  maxLength: 10,
+  errStr: 'Invalid invite token.',
+  func: function (token) {
+    var otherToken = Tokens.findOne({token: token})
+    if (otherToken) {
+      return false
+    } else {
+      return true
+    }
+  }
+})
+
 AccountsTemplates.configureRoute('signIn', {
   path: '/login'
 })
 
+AccountsTemplates.configureRoute('signUp', {
+  path: '/register'
+})
+
 AccountsTemplates.configure({
-  forbidClientAccountCreation: true
+  defaultLayout: 'layoutMain',
+  forbidClientAccountCreation: false,
+  overrideLoginErrors: false
 })

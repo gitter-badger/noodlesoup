@@ -5,6 +5,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
+random
 iron:router
 mquandalle:jade
 accounts-password

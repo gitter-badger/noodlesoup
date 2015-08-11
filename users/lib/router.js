@@ -5,3 +5,11 @@ Router.route('/user', function () {
     this.redirect('/')
   }
 })
+
+Router.route('/gentoken', function () {
+  if (Meteor.userId()) {
+    this.render('userTokenGen')
+  } else {
+    this.redirect('/')
+  }
+})

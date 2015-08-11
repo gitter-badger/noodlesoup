@@ -1,4 +1,5 @@
 Users = Meteor.users
+Tokens = new Mongo.Collection('tokens')
 
 Noodlesoup.schemas.UserProfile = new SimpleSchema({
   realname: {
@@ -36,10 +37,23 @@ Noodlesoup.schemas.User = new SimpleSchema({
     optional: true,
     blackbox: true
   },
+  token: {
+    type: String,
+    optional: true
+  },
   profile: {
     type: Noodlesoup.schemas.UserProfile,
     optional: true
   }
 })
 
+Noodlesoup.schemas.Token = new SimpleSchema({
+  token: {
+    type: String,
+    min: 9,
+    max: 10
+  }
+})
+
 Users.attachSchema(Noodlesoup.schemas.User)
+Tokens.attachSchema(Noodlesoup.schemas.Token)

@@ -6,6 +6,9 @@ Security.defineMethod('ifIsCurrentUser', {
   }
 })
 
+
 Posts.permit(['insert', 'update', 'remove']).ifLoggedIn().apply()
 Users.permit(['insert']).ifLoggedIn().apply()
 Users.permit(['update', 'remove']).ifIsCurrentUser().ifLoggedIn().apply()
+Tokens.permit(['remove']).apply()
+Tokens.permit(['insert']).ifLoggedIn().apply()
