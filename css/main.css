@@ -27,3 +27,7 @@ img {
   color: #fff;
   content: "!";
 }
+
+.noodlesoup.about.description {
+  text-align: center;
+}

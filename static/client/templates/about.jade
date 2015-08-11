@@ -6,13 +6,10 @@ template(name="staticAbout")
         | Hey, we're Noodlesoup!
         .sub.header
           | We are a creative bunch of people, really.
-    .ui.items
+    .ui.four.column.stackable.grid.container
       each users
-        .item
-          .ui.tiny.image
-            img(src="{{getGravatarUrl emails}}")
-          .content
-            .header #{username}
-              small #{profile.realname}
-            .description
-              p #{profile.bio}
+        .column
+          img.ui.centered.small.circular.image(src="{{getGravatarUrl emails}}")
+          .ui.centered.header #{username}
+              .sub.header #{profile.realname}
+          .noodlesoup.about.description #{profile.bio}
