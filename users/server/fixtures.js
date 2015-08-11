@@ -1,6 +1,6 @@
 if (Users.find().count() === 0) {
   // if no users exist, create an initial one
-  Accounts.createUser({
+  var id = Accounts.createUser({
     username: 'schisma',
     email: 'jona@schisma.co',
     password: 'supersecret',
@@ -9,6 +9,7 @@ if (Users.find().count() === 0) {
       bio: 'A cool man.'
     }
   })
+  Roles.addUsersToRoles(id, ['admin', 'writer', 'pr'])
 }
 
 Accounts.onCreateUser(function (opts, user) {

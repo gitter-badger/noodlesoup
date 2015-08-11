@@ -41,6 +41,10 @@ Noodlesoup.schemas.User = new SimpleSchema({
     type: String,
     optional: true
   },
+  roles: {
+    type: [String],
+    optional: true
+  },
   profile: {
     type: Noodlesoup.schemas.UserProfile,
     optional: true

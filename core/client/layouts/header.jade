@@ -6,6 +6,9 @@ template(name="layoutHeader")
         .right.menu
           .borderless.item Ohayou, 
             .noodlesoup.username #{currentUser.username}
-          a.item(href="/write/new") New post
+          if isInRole 'writer'
+            a.item(href="/write/new") New post
+          if isInRole 'pr'
+            a.item(href="/write/drafts") Drafts
           a.item(href="/user") Settings
           a.item(href="/logout") Logout
