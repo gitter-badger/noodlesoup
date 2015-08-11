@@ -6,6 +6,18 @@ function red (self) {
   }
 }
 
+function redWrt (self) {
+  if (!Meteor.user() && Roles.userIsInRole(Meteor.userId(), 'writer')) {
+    self.redirect('/')
+  }
+}
+
+function redPR (self) {
+  if (!Meteor.user() && Roles.userIsInRole(Meteor.userId(), 'pr')) {
+    self.redirect('/')
+  }
+}
+
 // POST FRONTEND
 
 Router.route('/p/:post_slug', function () {
@@ -35,12 +47,12 @@ Router.route('/a/:author_name', function () {
 // WRITER BACKEND
 
 Router.route('/write/new', function () {
-  red(this)
+  redWrt(this)
   this.render('postNew')
 })
 
 Router.route('/p/:post_slug/edit', function () {
-  red(this)
+  redWrt(this)
   var post = Posts.findOne({slug: this.params.post_slug})
   // make sure only the creator can edit
   if (post.author !== Meteor.user().username) {

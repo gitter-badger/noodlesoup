@@ -7,7 +7,7 @@ Router.route('/user', function () {
 })
 
 Router.route('/gentoken', function () {
-  if (Meteor.userId()) {
+  if (Meteor.userId() && Roles.userIsInRole(Meteor.userId(), 'admin')) {
     this.render('userTokenGen')
   } else {
     this.redirect('/')
