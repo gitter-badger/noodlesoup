@@ -45,16 +45,16 @@ AccountsTemplates.addField({
   }
 })
 
+AccountsTemplates.configure({
+  defaultLayout: 'layoutAccounts',
+  forbidClientAccountCreation: false,
+  overrideLoginErrors: false
+})
+
 AccountsTemplates.configureRoute('signIn', {
   path: '/login'
 })
 
 AccountsTemplates.configureRoute('signUp', {
   path: '/register'
-})
-
-AccountsTemplates.configure({
-  defaultLayout: 'layoutMain',
-  forbidClientAccountCreation: false,
-  overrideLoginErrors: false
 })
