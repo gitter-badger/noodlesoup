@@ -8,7 +8,8 @@ Meteor.publish('userData', function () {
       username: 1,
       emails: 1,
       'profile.realname': 1,
-      'profile.bio': 1
+      'profile.bio': 1,
+      roles: 1
     }
   })
 })

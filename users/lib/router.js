@@ -15,7 +15,7 @@ Router.route('/gentoken', function () {
 })
 
 Router.route('/a/:user_name/edit', function () {
-  if (Meteor.userId() && Roles.userIsInRole(Users.findOne({username: this.params.user_name})._id, 'admin')) {
+  if (Meteor.userId() && Roles.userIsInRole(Meteor.userId(), 'admin')) {
     this.render('userAdmin', {
       data: function () {
         return Users.findOne({username: this.params.user_name})
