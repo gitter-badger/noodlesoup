@@ -10,3 +10,11 @@ Template.postOne.helpers({
     return false
   }
 })
+
+Template.postOne.events({
+  'click #delete-button': function (event) {
+    event.preventDefault()
+    Posts.remove({_id: this._id})
+    Router.go('/')
+  }
+})

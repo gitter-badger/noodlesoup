@@ -6,9 +6,18 @@ Security.defineMethod('ifIsCurrentUser', {
   }
 })
 
+Security.defineMethod('ifIsCurrentUserPost', {
+  fetch: [],
+  transform: null,
+  deny: function (type, arg, userId, doc) {
+    return Users.findOne({_id: userId}).username !== doc.author
+  }
+})
 
-Posts.permit(['insert', 'update', 'remove']).ifLoggedIn().apply()
+
+
+Posts.permit(['insert']).ifLoggedIn().apply()
+Posts.permit(['update', 'remove']).ifIsCurrentUserPost().ifLoggedIn().apply()
 Users.permit(['insert']).ifLoggedIn().apply()
 Users.permit(['update', 'remove']).ifIsCurrentUser().ifLoggedIn().apply()
-Tokens.permit(['remove']).apply()
 Tokens.permit(['insert']).ifLoggedIn().apply()
