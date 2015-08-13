@@ -23,10 +23,10 @@ Template.userAdmin.helpers({
 })
 
 Template.userAdmin.events({
-  'click #give': function () {
-    Roles.addUsersToRoles(this._id, event.target.getAttribute('data-give'))
+  'click #give': function (event, template) {
+    Roles.addUsersToRoles(template.data._id, event.target.getAttribute('data-give'))
   },
-  'click #remove': function () {
-    Roles.removeUsersFromRoles(this._id, event.target.getAttribute('data-remove'))
+  'click #remove': function (event, template) {
+    Roles.removeUsersFromRoles(template.data._id, event.target.getAttribute('data-remove'))
   }
 })
