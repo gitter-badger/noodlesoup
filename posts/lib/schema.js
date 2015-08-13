@@ -37,6 +37,10 @@ Noodlesoup.schemas.Post = new SimpleSchema({
     type: String,
     optional: true,
     regEx: SimpleSchema.RegEx.Url
+  },
+  draft: {
+    type: Boolean,
+    defaultValue: true
   }
 })
 

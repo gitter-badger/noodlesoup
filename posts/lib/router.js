@@ -1,19 +1,5 @@
-// redirect if not logged in
-// TODO: for some reason globbing the router like '/write/*' doesn't work? this needs fixing
-function red (self) {
-  if (!Meteor.user()) {
-    self.redirect('/')
-  }
-}
-
 function redWrt (self) {
   if (!Meteor.user() && Roles.userIsInRole(Meteor.userId(), 'writer')) {
-    self.redirect('/')
-  }
-}
-
-function redPR (self) {
-  if (!Meteor.user() && Roles.userIsInRole(Meteor.userId(), 'pr')) {
     self.redirect('/')
   }
 }
