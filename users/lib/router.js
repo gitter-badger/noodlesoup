@@ -2,7 +2,7 @@ function isAdmin () {
   return _.contains(Users.findOne({_id: Meteor.userId()}).roles, 'admin')
 }
 
-Router.route('/user', function () {
+Router.route('/settings/general', function () {
   if (Meteor.userId()) {
     this.render('userEdit')
   } else {

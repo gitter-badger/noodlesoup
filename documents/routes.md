@@ -15,4 +15,4 @@ STATIC
 /write/guidelines - writer guidelines
 
 USERS
-/user - change your user metadata
+/settings/general - change your user metadata

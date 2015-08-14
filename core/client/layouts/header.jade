@@ -1,7 +1,8 @@
 template(name="layoutHeader")
   .ui.fixed.inverted.large.black.menu
     .ui.page.container
-      a.item.noodlesoup.header(href="/") noodlesoup
+      a.item.noodlesoup.header(href="/")
+        img(src="/img/noodlesoup-logo-final-white.png")
       if currentUser
         .right.menu
           .borderless.item Ohayou, 
@@ -10,5 +11,9 @@ template(name="layoutHeader")
             a.item(href="/write/new") New post
           if isInRole 'pr'
             a.item(href="/write/drafts") Drafts
-          a.item(href="/user") Settings
+          a.item(href="/settings/general") Settings
           a.item(href="/logout") Logout
+      else
+        .right.menu
+          a.item(href="/login") Login
+          a.item(href="/register") Register
