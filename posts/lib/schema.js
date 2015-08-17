@@ -27,6 +27,9 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   createdAt: {
     type: String
   },
+  date: {
+    type: Date
+  },
   author: {
     type: String
   },
