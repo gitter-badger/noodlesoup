@@ -30,7 +30,7 @@ Template.postTag.helpers({
   },
   hasMore: function () {
     _tagTrigger.depend()
-    return !(Posts.find({draft: false}).count() <= Template.postTag.limit)
+    return !(Posts.find({tag: this.tag_name}, {draft: false}).count() <= Template.postTag.limit)
   }
 })
 
@@ -48,7 +48,7 @@ Template.postAuthor.helpers({
   },
   hasMore: function () {
     _authorTrigger.depend()
-    return !(Posts.find({draft: false}).count() <= Template.postAuthor.limit)
+    return !(Posts.find({author: this.author_name}, {draft: false}).count() <= Template.postAuthor.limit)
   }
 })
 
