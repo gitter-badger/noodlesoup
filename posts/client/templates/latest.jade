@@ -3,6 +3,8 @@ template(name="postLatest")
     .ui.divided.items
       each posts
         +postListOne
+      +if hasMore
+        button.ui.red.button.ns.loadmore Load more
     .ui.piled.segment
       h1.ui.header Welcome to Noodlesoup!
       p.
