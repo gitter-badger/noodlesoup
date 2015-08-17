@@ -12,7 +12,7 @@ Template.postLatest.helpers({
   },
   hasMore: function () {
     _latestTrigger.depend()
-    return !(Posts.find({draft: false}, {limit: Template.postLatest.limit}).count() <= Template.postLatest.limit)
+    return !(Posts.find({draft: false}).count() <= Template.postLatest.limit)
   }
 })
 
@@ -30,7 +30,7 @@ Template.postTag.helpers({
   },
   hasMore: function () {
     _tagTrigger.depend()
-    return !(Posts.find({draft: false}, {limit: Template.postTag.limit}).count() <= Template.postTag.limit)
+    return !(Posts.find({draft: false}).count() <= Template.postTag.limit)
   }
 })
 
@@ -48,7 +48,7 @@ Template.postAuthor.helpers({
   },
   hasMore: function () {
     _authorTrigger.depend()
-    return !(Posts.find({draft: false}, {limit: Template.postAuthor.limit}).count() <= Template.postAuthor.limit)
+    return !(Posts.find({draft: false}).count() <= Template.postAuthor.limit)
   }
 })
 
