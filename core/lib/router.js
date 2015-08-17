@@ -1,5 +1,6 @@
 Router.configure({
-  layoutTemplate: 'layoutMain'
+  layoutTemplate: 'layoutMain',
+  loadingTemplate: 'loading'
 })
 
 Router.route('/', function () {
