@@ -58,3 +58,14 @@ Template.postAuthor.events({
     _authorTrigger.changed()
   }
 })
+
+Template.postNew.helpers({
+  tags: function () {
+    var r = []
+    Noodlesoup.tags.forEach(function (e) {
+      r.push({value: e, label: e})
+    })
+    console.log(r)
+    return r
+  }
+})

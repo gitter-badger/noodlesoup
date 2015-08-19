@@ -22,7 +22,8 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   },
   tag: {
     type: String,
-    label: 'Select a tag for where to categorize this post'
+    label: 'Select a tag for where to categorize this post',
+    allowedValues: Noodlesoup.tags
   },
   createdAt: {
     type: String
