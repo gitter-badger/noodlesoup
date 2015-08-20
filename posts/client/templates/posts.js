@@ -8,11 +8,17 @@ var _latestTrigger = new Deps.Dependency()
 Template.postLatest.helpers({
   posts: function () {
     _latestTrigger.depend()
-    return Posts.find({draft: false}, {limit: Template.postLatest.limit, sort: {date: -1}})
+    return Posts.find({draft: false}, {limit: 6 + Template.postLatest.limit, sort: {date: -1}}).fetch().slice(5)
   },
   hasMore: function () {
     _latestTrigger.depend()
-    return !(Posts.find({draft: false}).count() <= Template.postLatest.limit)
+    return !(Posts.find({draft: false}).count() <= 6 + Template.postLatest.limit)
+  },
+  firstThree: function () {
+    return Posts.find({draft: false}, {limit: 3, sort: {date: -1}})
+  },
+  lastThree: function () {
+    return Posts.find({draft: false}, {limit: 6, sort: {date: -1}}).fetch().slice(2, 5)
   }
 })
 

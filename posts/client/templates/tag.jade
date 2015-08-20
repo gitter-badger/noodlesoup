@@ -5,7 +5,7 @@ template(name="postTag")
         a.item(href="/") Latest
         a.active.item(href="/reviews") Reviews
     else
-      h1 Browsing #{tag_name}
+      h1 Browsing #{tag_name}   
     .ui.divided.items
       each posts
         +postListOne

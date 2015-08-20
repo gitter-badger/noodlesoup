@@ -3,6 +3,31 @@ template(name="postLatest")
     .ui.large.secondary.menu
       a.active.item(href="/") Latest
       a.item(href="/reviews") Reviews
+    .ui.grid
+      .three.column.row
+        each firstThree
+          .column
+            a.ui.fluid.card(href="/p/#{slug}")
+              .image
+                img(src="#{thumbnail}")
+              .content
+                .header #{title}
+                .meta #{author} - #{createdAt}
+                .description #{summary}
+              a.ui.red.bottom.attached.button(href="/t/#{tag}")
+                | #{tag}
+      .three.column.row
+        each lastThree
+          .column
+            a.ui.fluid.card(href="/p/#{slug}")
+              .image
+                img(src="#{thumbnail}")
+              .content
+                .header #{title}
+                .meta #{author} - #{createdAt}
+                .description #{summary}
+              a.ui.red.bottom.attached.button(href="/t/#{tag}")
+                | #{tag}
     .ui.divided.items
       each posts
         +postListOne

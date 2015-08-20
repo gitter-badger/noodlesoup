@@ -3,10 +3,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 1',
     summary: '1',
     body: '1',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-1',
     draft: false
   })
@@ -14,10 +15,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 2',
     summary: '2',
     body: '2',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-2',
     draft: false
   })
@@ -25,10 +27,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 3',
     summary: '3',
     body: '3',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-3',
     draft: false
   })
@@ -36,10 +39,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 4',
     summary: '4',
     body: '4',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-4',
     draft: false
   })
@@ -47,10 +51,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 5',
     summary: '5',
     body: '5',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-5',
     draft: false
   })
@@ -58,10 +63,11 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 6',
     summary: '6',
     body: '6',
-    tag: 'post',
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-6',
     draft: false
   })
@@ -69,10 +75,12 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     title: 'post 7',
     summary: '7',
     body: '7',
-    tag: 'post',
+    
+    tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
     author: 'schisma',
+    thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-7',
     draft: false
   })
