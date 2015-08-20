@@ -1,5 +1,8 @@
 template(name="postLatest")
   .sixteen.wide.column
+    .ui.large.secondary.menu
+      a.active.item(href="/") Latest
+      a.item(href="/reviews") Reviews
     .ui.divided.items
       each posts
         +postListOne

@@ -31,6 +31,11 @@ Template.postTag.helpers({
   hasMore: function () {
     _tagTrigger.depend()
     return !(Posts.find({tag: this.tag_name}, {draft: false}).count() <= Template.postTag.limit)
+  },
+  isEpisodeReview: function () {
+    if (this.tag_name === 'episode review')
+      return true
+    return false
   }
 })
 

@@ -6,6 +6,14 @@ function redWrt (self) {
 
 // POST FRONTEND
 
+Router.route('/reviews', function () {
+  this.render('postTag', {
+    data: {
+      tag_name: 'episode review'
+    }
+  })
+})
+
 Router.route('/p/:post_slug', function () {
   this.render('postOne', {
     data: function () {
