@@ -2,6 +2,11 @@ template(name="postOne")
   //- Main content
   .twelve.wide.column
     h1 #{title}
+      span.post-info
+        a(href="/a/#{author}")
+          img(src="{{getGravatarUrl author}}").ui.avatar.image
+          span #{author}
+        span.ui.label #{createdAt}
     if disclaimer
       .ui.red.icon.message
         i.warning.icon
@@ -16,11 +21,6 @@ template(name="postOne")
     +disqus
   //- Sidebar
   .four.wide.column
-    a(href="/a/#{author}")
-      img(src="{{getGravatarUrl author}}").ui.avatar.image
-      span #{author}
-    .gray posted on #{createdAt}
     if isAuthor author
       .ui.compact.message.
-        This post is yours. Want to <a href="/p/#{slug}/edit">edit</a> it?
-      a.ui.red.button#delete-button Delete
+        You are the author of this post. Would you like  <a href="/p/#{slug}/edit">edit</a> or <a href="#" id="delete-button">delete</a> it?
