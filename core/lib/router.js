@@ -10,8 +10,3 @@ Router.route('/', function () {
 Router.route('/logout', function () {
   AccountsTemplates.logout()
 })
-
-Router.route('/(.*)', function () {
-  this.render('404')
-  this.next()
-})
