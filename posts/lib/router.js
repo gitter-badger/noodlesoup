@@ -1,6 +1,6 @@
 function redWrt (self) {
   if (!Meteor.user() && Roles.userIsInRole(Meteor.userId(), 'writer')) {
-    self.redirect('/')
+    self.render('404')
   }
 }
 
@@ -23,11 +23,15 @@ Router.route('/t/:tag_name', function () {
 })
 
 Router.route('/a/:author_name', function () {
-  this.render('postAuthor', {
-    data: {
-      author_name: this.params.author_name
-    }
-  })
+  if (Users.findOne({username: this.params.author_name})) {
+    this.render('postAuthor', {
+      data: {
+        author_name: this.params.author_name
+      }
+    })
+  } else {
+    this.render('404')
+  }
 })
 
 // WRITER BACKEND
