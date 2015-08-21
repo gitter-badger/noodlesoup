@@ -1,6 +1,9 @@
 template(name="postOne")
   //- Main content
-  .twelve.wide.column
+  .sixteen.wide.column
+    if isAuthor author
+      .ui.message.
+        You are the author of this post. Would you like  <a href="/p/#{slug}/edit">edit</a> or <a href="#" id="delete-button">delete</a> it?
     h1 #{title}
       span.post-info
         a(href="/a/#{author}")
@@ -19,8 +22,3 @@ template(name="postOne")
     br
     a(href="/t/#{tag}").ui.red.tag.label #{tag}
     +disqus
-  //- Sidebar
-  .four.wide.column
-    if isAuthor author
-      .ui.compact.message.
-        You are the author of this post. Would you like  <a href="/p/#{slug}/edit">edit</a> or <a href="#" id="delete-button">delete</a> it?
