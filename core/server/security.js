@@ -39,6 +39,7 @@ Security.defineMethod('ifIsDraft', {
 
 Posts.permit(['insert']).ifLoggedIn().ifIsRole('writer').apply()
 Posts.permit(['update']).ifLoggedIn().ifIsRole('pr').ifIsDraft().apply()
-Posts.permit(['update', 'remove']).ifIsCurrentUsersPost().ifIsRole('writer').ifLoggedIn().apply()
+Posts.permit(['update']).ifIsCurrentUsersPost().ifIsRole('writer').ifLoggedIn().apply()
+Posts.permit(['remove']).ifIsCurrentUsersPost().ifIsRole('writer').ifLoggedIn().apply()
 Users.permit(['insert', 'update', 'remove']).ifIsCurrentUserOrAdmin().ifLoggedIn().apply()
 Tokens.permit(['insert']).ifLoggedIn().apply()
