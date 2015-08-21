@@ -76,7 +76,6 @@ Template.postNew.helpers({
     Noodlesoup.tags.forEach(function (e) {
       r.push({value: e, label: e})
     })
-    console.log(r)
     return r
   }
 })
