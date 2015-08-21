@@ -1,6 +1,7 @@
 Router.configure({
   layoutTemplate: 'layoutMain',
-  loadingTemplate: 'loading'
+  loadingTemplate: 'loading',
+  notFoundTemplate: '404'
 })
 
 Router.route('/', function () {
