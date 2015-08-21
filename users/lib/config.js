@@ -6,6 +6,7 @@ AccountsTemplates.addField({
   displayName: 'username',
   required: true,
   minLength: 3,
+  lowercase: true,
   errStr: 'Invalid username!'
 })
 

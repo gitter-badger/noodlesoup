@@ -8,4 +8,4 @@ core/client/semantic/semantic.less
 core/client/semantic/theme.config.import.less
 core/client/semantic/theme.import.less
 
-mup.json
+mup/**/mup.json
