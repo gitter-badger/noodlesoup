@@ -19,9 +19,9 @@ switch (args[0]) {
     break
   case 'deploy':
     if (args[1]) {
-      process.chdir('/mup')
-      process.chdir('/' + args[1])
-      exec('mup deploy')
+      process.chdir('mup')
+      process.chdir(args[1])
+      child = exec('mup deploy')
     } else {
       throw new Error('ctl deploy needs a deploy target!')
     }
