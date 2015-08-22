@@ -6,7 +6,7 @@ template(name="layoutHeader")
       if currentUser
         .right.menu
           .borderless.item Ohayou, 
-            .noodlesoup.username #{currentUser.username}
+            a.noodlesoup.username(href="/a/#{currentUser.username}") #{currentUser.username}
           if isInRole 'writer'
             a.item(href="/write/new") New post
           if isInRole 'pr'
