@@ -12,7 +12,7 @@ template(name="postLatest")
                 img(src="#{thumbnail}")
               .content
                 .header #{title}
-                .meta #{author} - #{createdAt}
+                .meta {{getAuthor authorId}} - #{createdAt}
                 .description #{summary}
               a.ui.red.bottom.attached.button(href="/t/#{tag}")
                 | #{tag}

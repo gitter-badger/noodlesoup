@@ -1,17 +1,20 @@
 Template.postOne.helpers({
-  getGravatarUrl: function (username) {
-    var user = Users.findOne({username: username})
+  getGravatarUrl: function (id) {
+    var user = Users.findOne({_id: id})
     return Gravatar.imageUrl(user.emails[0].address)
   },
-  isAuthor: function (author) {
-    if (author === Meteor.user().username) {
+  isAuthor: function (id) {
+    if (Users.findOne({_id: id}).username === Meteor.user().username) {
       return true
     } else {
       return false
     }
   },
-  isAdminButNotAuthor: function (author) {
-    return Roles.userIsInRole(Meteor.userId(), 'admin') && Meteor.user().username !== author
+  isAdminButNotAuthor: function (id) {
+    return Roles.userIsInRole(Meteor.userId(), 'admin') && Meteor.user().username !== Users.findOne({_id: id}).username
+  },
+  getAuthor: function (id) {
+    return Users.findOne({_id: id}).username
   }
 })
 

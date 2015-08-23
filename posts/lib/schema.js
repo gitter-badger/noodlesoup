@@ -31,7 +31,7 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   date: {
     type: Date
   },
-  author: {
+  authorId: {
     type: String
   },
   slug: {

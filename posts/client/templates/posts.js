@@ -19,6 +19,9 @@ Template.postLatest.helpers({
   },
   lastThree: function () {
     return Posts.find({draft: false}, {limit: 6, sort: {date: -1}}).fetch().slice(2, 5)
+  },
+  getAuthor: function (id) {
+    return Users.findOne({_id: id}).username
   }
 })
 
@@ -55,11 +58,11 @@ Template.postTag.events({
 Template.postAuthor.helpers({
   posts: function () {
     _authorTrigger.depend()
-    return Posts.find({author: this.author_name}, {limit: Template.postAuthor.limit, sort: {date: -1}})
+    return Posts.find({authorId: Users.findOne({username: this.author_name})._id}, {limit: Template.postAuthor.limit, sort: {date: -1}})
   },
   hasMore: function () {
     _authorTrigger.depend()
-    return !(Posts.find({author: this.author_name}, {draft: false}).count() <= Template.postAuthor.limit)
+    return !(Posts.find({authorId: Users.findOne({username: this.author_name})._id}, {draft: false}).count() <= Template.postAuthor.limit)
   }
 })
 
@@ -77,5 +80,11 @@ Template.postNew.helpers({
       r.push({value: e, label: e})
     })
     return r
+  }
+})
+
+Template.postListOne.helpers({
+  getAuthor: function (id) {
+    return Users.findOne({_id: id}).username
   }
 })

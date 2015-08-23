@@ -1,3 +1,17 @@
+if (Users.find().count() === 0) {
+  // if no users exist, create an initial one
+  var id = Accounts.createUser({
+    username: 'schisma',
+    email: 'jona@schisma.co',
+    password: 'supersecret',
+    profile: {
+      realname: 'Jona H.',
+      bio: 'A cool man.'
+    }
+  })
+  Roles.addUsersToRoles(id, ['admin', 'writer', 'pr'])
+}
+
 if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
   Posts.insert({
     title: 'post 1',
@@ -6,7 +20,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-1',
     draft: false
@@ -18,7 +32,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-2',
     draft: false
@@ -30,7 +44,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-3',
     draft: false
@@ -42,7 +56,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-4',
     draft: false
@@ -54,7 +68,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-5',
     draft: false
@@ -66,7 +80,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-6',
     draft: false
@@ -79,7 +93,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: Noodlesoup.methods.getTimestamp(new Date()),
     date: new Date(),
-    author: 'schisma',
+    authorId: Users.findOne({username: 'schisma'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-7',
     draft: false
