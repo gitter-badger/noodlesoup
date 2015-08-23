@@ -16,7 +16,7 @@ Security.defineMethod('ifIsCurrentUsersPostOrAdmin', {
   fetch: [],
   transform: null,
   deny: function (type, arg, userId, doc) {
-    if (Users.findOne({_id: userId}).username !== doc.author) {
+    if (Users.findOne({_id: userId}).username !== Users.findOne({_id: doc.authorId}).username) {
       return false
     } else if (Users.userIsInRole(userId, 'admin')) {
       return false
@@ -34,13 +34,13 @@ Security.defineMethod('ifIsRole', {
   }
 })
 
-Security.defineMethod('ifIsCurrentUsersPost', {
+/*Security.defineMethod('ifIsCurrentUsersPost', {
   fetch: [],
   transform: null,
   deny: function (type, arg, userId, doc) {
     return Users.findOne({_id: userId}).username !== doc.author
   }
-})
+})*/
 
 Security.defineMethod('ifIsDraft', {
   fetch: [],
