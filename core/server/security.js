@@ -12,6 +12,20 @@ Security.defineMethod('ifIsCurrentUserOrAdmin', {
   }
 })
 
+Security.defineMethod('ifIsCurrentUsersPostOrAdmin', {
+  fetch: [],
+  transform: null,
+  deny: function (type, arg, userId, doc) {
+    if (Users.findOne({_id: userId}).username !== doc.author) {
+      return false
+    } else if (Users.userIsInRole(userId, 'admin')) {
+      return false
+    } else {
+      return true
+    }
+  }
+})
+
 Security.defineMethod('ifIsRole', {
   fetch: [],
   transform: null,
@@ -39,7 +53,7 @@ Security.defineMethod('ifIsDraft', {
 
 Posts.permit(['insert']).ifLoggedIn().ifIsRole('writer').apply()
 Posts.permit(['update']).ifLoggedIn().ifIsRole('pr').ifIsDraft().apply()
-Posts.permit(['update']).ifIsCurrentUsersPost().ifIsRole('writer').ifLoggedIn().apply()
-Posts.permit(['remove']).ifIsCurrentUsersPost().ifIsRole('writer').ifLoggedIn().apply()
+Posts.permit(['update']).ifIsCurrentUsersPostOrAdmin().ifIsRole('writer').ifLoggedIn().apply()
+Posts.permit(['remove']).ifIsCurrentUsersPostOrAdmin().ifIsRole('writer').ifLoggedIn().apply()
 Users.permit(['insert', 'update', 'remove']).ifIsCurrentUserOrAdmin().ifLoggedIn().apply()
 Tokens.permit(['insert']).ifLoggedIn().apply()

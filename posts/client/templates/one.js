@@ -6,8 +6,12 @@ Template.postOne.helpers({
   isAuthor: function (author) {
     if (author === Meteor.user().username) {
       return true
+    } else {
+      return false
     }
-    return false
+  },
+  isAdminButNotAuthor: function (author) {
+    return Roles.userIsInRole(Meteor.userId(), 'admin') && Meteor.user().username !== author
   }
 })
 
