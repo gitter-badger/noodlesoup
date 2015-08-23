@@ -7,5 +7,5 @@ template(name="draftListOne")
       .description #{summary} 
       .extra
         .right.floated
-          span.gray(style="margin-right: 10px;") #{author}, #{createdAt}
+          span.gray(style="margin-right: 10px;") {{getAuthor authorId}}, #{createdAt}
           a.ui.red.tag.label(href="/t/#{tag}") #{tag}
