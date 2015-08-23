@@ -6,6 +6,12 @@ template(name="userEdit")
         label(for="realname") Your name:
         input(type="text" name="realname" value="#{getRealname}")
       .field
+        label(for="username") Username:
+        input(type="text" name="username" value="#{getUsername}")
+      .field
+        label(for="email") Email:
+        input(type="text" name="email" value="#{getEmail}")
+      .field
         label(for="bio") Bio:
         textarea(name="bio" rows="2") #{getBio}
       button(type="submit").ui.button.primary Save changes
