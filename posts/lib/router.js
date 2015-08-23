@@ -58,7 +58,7 @@ Router.route('/p/:post_slug/edit', function () {
   redWrt(this)
   var post = Posts.findOne({slug: this.params.post_slug})
   // make sure only the creator can edit
-  if (post.author !== Meteor.user().username) {
+  if (Users.findOne({_id: post.authorId}).username !== Meteor.user().username) {
     this.redirect('/p/' + this.params.post_slug)
   }
   this.render('postEdit', {
