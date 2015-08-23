@@ -49,6 +49,11 @@ Router.route('/write/new', function () {
   this.render('postNew')
 })
 
+Router.route('/write/guidelines', function () {
+  redWrt(this)
+  this.render('postGuidelines')
+})
+
 Router.route('/p/:post_slug/edit', function () {
   redWrt(this)
   var post = Posts.findOne({slug: this.params.post_slug})
