@@ -32,7 +32,7 @@ Security.defineMethod('ifIsRole', {
   deny: function (type, arg, userId, doc) {
     return !Roles.userIsInRole(userId, arg)
   }
-})
+}) 
 
 /*Security.defineMethod('ifIsCurrentUsersPost', {
   fetch: [],
