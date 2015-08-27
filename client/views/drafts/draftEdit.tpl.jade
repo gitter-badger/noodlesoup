@@ -1,9 +1,8 @@
-template(name="draftEdit")
-  .sixteen.wide.column
-    h1 Review "#{title}"
-    +autoForm collection="Posts" id="reviewPostForm" type="update" doc=getDoc template="semanticUI"
-      +afQuickField name="summary" rows=2
-      +afQuickField name="body" rows=7
-      +afFieldInput type="hidden" name="draft"
-      button.ui.button.primary(type="submit") Approve
-      span.grey(style="margin-left: 10px;") Please make sure you're 100% done with reviewing this article.
+.sixteen.wide.column
+  h1 Review "#{title}"
+  +autoForm collection="Posts" id="reviewPostForm" type="update" doc=getDoc template="semanticUI"
+    +afQuickField name="summary" rows=2
+    +afQuickField name="body" rows=7
+    +afFieldInput type="hidden" name="draft"
+    button.ui.button.primary(type="submit") Approve
+    span.grey(style="margin-left: 10px;") Please make sure you're 100% done with reviewing this article.

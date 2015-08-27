@@ -1,4 +1,4 @@
-Template.draftsList.helpers({
+Template.draftList.helpers({
   drafts: function () {
     return Posts.find({draft: true})
   }

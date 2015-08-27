@@ -1,11 +1,10 @@
-template(name="draftListOne")
-  a.item(href="/write/drafts/#{slug}")
-    .content
-      .ui.header #{title}
-        if disclaimer
-          .ui.red.tiny.label Disclaimer
-      .description #{summary} 
-      .extra
-        .right.floated
-          span.gray(style="margin-right: 10px;") {{getAuthor authorId}}, #{createdAt}
-          a.ui.red.tag.label(href="/t/#{tag}") #{tag}
+a.item(href="/write/drafts/#{slug}")
+  .content
+    .ui.header #{title}
+      if disclaimer
+        .ui.red.tiny.label Disclaimer
+    .description #{summary} 
+    .extra
+      .right.floated
+        span.gray(style="margin-right: 10px;") {{getAuthor authorId}}, #{createdAt}
+        a.ui.red.tag.label(href="/t/#{tag}") #{tag}
