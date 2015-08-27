@@ -1,0 +1,10 @@
+.sixteen.wide.column
+  h1.ui.header
+    | #{author_name}'s posts
+    if isInRole 'admin'
+      a.ui.green.mini.button(href="/a/#{author_name}/edit") Edit
+  .ui.divided.items
+    each posts
+      +postListOne
+    +if hasMore
+      button.ui.red.button.ns.loadmore Load more
