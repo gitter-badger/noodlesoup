@@ -1,6 +1,6 @@
 Posts = new Mongo.Collection('posts')
 
-Noodlesoup.schemas.Post = new SimpleSchema({
+App.schemas.Post = new SimpleSchema({
   title: {
     type: String,
     label: 'Title',
@@ -23,7 +23,7 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   tag: {
     type: String,
     label: 'Select a tag for where to categorize this post',
-    allowedValues: Noodlesoup.tags
+    allowedValues: App.tags
   },
   createdAt: {
     type: String
@@ -47,5 +47,5 @@ Noodlesoup.schemas.Post = new SimpleSchema({
   }
 })
 
-Posts.attachSchema(Noodlesoup.schemas.Post)
+Posts.attachSchema(App.schemas.Post)
 Posts.friendlySlugs('title')
