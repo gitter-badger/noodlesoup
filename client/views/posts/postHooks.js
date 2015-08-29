@@ -3,7 +3,7 @@ AutoForm.hooks({
     before: {
       insert: function (doc) {
         doc.authorId = Meteor.userId()
-        doc.createdAt = Noodlesoup.methods.getTimestamp(new Date())
+        doc.createdAt = App.methods.getTimestamp(new Date())
         doc.date = new Date()
         doc.body = $('.epicarea').val()
         return doc

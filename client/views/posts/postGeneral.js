@@ -76,7 +76,7 @@ Template.postAuthor.events({
 Template.postNew.helpers({
   tags: function () {
     var r = []
-    Noodlesoup.tags.forEach(function (e) {
+    App.tags.forEach(function (e) {
       r.push({value: e, label: e})
     })
     return r
