@@ -1,3 +1,9 @@
+/**
+ * General post JS
+ * Bigger JS chunks are in their own JS file (like postLatest)
+ */
+
+
 // Variables for pagination
 Template.postLatest.limit = 5
 Template.postTag.limit = 5
@@ -5,37 +11,6 @@ Template.postAuthor.limit = 5
 var _latestTrigger = new Deps.Dependency()
   , _tagTrigger = new Deps.Dependency()
   , _authorTrigger = new Deps.Dependency()
-
-/*====================================
-=            LATEST POSTS            =
-====================================*/
-
-Template.postLatest.helpers({
-  posts: function () {
-    _latestTrigger.depend()
-    return Posts.find({draft: false}, {limit: 6 + Template.postLatest.limit, sort: {date: -1}}).fetch().slice(5)
-  },
-  hasMore: function () {
-    _latestTrigger.depend()
-    return !(Posts.find({draft: false}).count() <= 6 + Template.postLatest.limit)
-  },
-  firstThree: function () {
-    return Posts.find({draft: false}, {limit: 3, sort: {date: -1}})
-  },
-  lastThree: function () {
-    return Posts.find({draft: false}, {limit: 6, sort: {date: -1}}).fetch().slice(2, 5)
-  },
-  getAuthor: function (id) {
-    return Users.findOne({_id: id}).username
-  }
-})
-
-Template.postLatest.events({
-  'click .ns.loadmore': function (event, template) {
-    Template.postLatest.limit += 5
-    _latestTrigger.changed()
-  }
-})
 
 /*----------  ONE POST IN LISTING  ----------*/
 
