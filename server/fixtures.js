@@ -99,8 +99,3 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     draft: false
   })
 }
-
-Accounts.onCreateUser(function (opts, user) {
-  Tokens.remove({})
-  return user
-})
