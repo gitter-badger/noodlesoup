@@ -107,3 +107,13 @@ Template.postNew.helpers({
     return r
   }
 })
+
+/*=================================
+=            POST EDIT            =
+=================================*/
+
+Template.postEdit.helpers({
+  getDoc: function () {
+    return this
+  }
+})
