@@ -1,9 +1,14 @@
+// Variables for pagination
 Template.postLatest.limit = 5
 Template.postTag.limit = 5
 Template.postAuthor.limit = 5
 var _latestTrigger = new Deps.Dependency()
   , _tagTrigger = new Deps.Dependency()
   , _authorTrigger = new Deps.Dependency()
+
+/*====================================
+=            LATEST POSTS            =
+====================================*/
 
 Template.postLatest.helpers({
   posts: function () {
@@ -32,6 +37,18 @@ Template.postLatest.events({
   }
 })
 
+/*----------  ONE POST IN LISTING  ----------*/
+
+Template.postListOne.helpers({
+  getAuthor: function (id) {
+    return Users.findOne({_id: id}).username
+  }
+})
+
+/*===================================
+=            TAG LISTING            =
+===================================*/
+
 Template.postTag.helpers({
   posts: function () {
     _tagTrigger.depend()
@@ -55,6 +72,10 @@ Template.postTag.events({
   }
 })
 
+/*======================================
+=            AUTHOR LISTING            =
+======================================*/
+
 Template.postAuthor.helpers({
   posts: function () {
     _authorTrigger.depend()
@@ -73,6 +94,10 @@ Template.postAuthor.events({
   }
 })
 
+/*================================
+=            NEW POST            =
+================================*/
+
 Template.postNew.helpers({
   tags: function () {
     var r = []
@@ -80,11 +105,5 @@ Template.postNew.helpers({
       r.push({value: e, label: e})
     })
     return r
-  }
-})
-
-Template.postListOne.helpers({
-  getAuthor: function (id) {
-    return Users.findOne({_id: id}).username
   }
 })
