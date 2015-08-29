@@ -1,3 +1,9 @@
+/**
+ * Collection & data publications.
+ * Subscriptions are in client/main.js.
+ */
+
+
 Meteor.publish('posts', function () {
   return Posts.find()
 })

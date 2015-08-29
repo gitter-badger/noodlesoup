@@ -1,3 +1,9 @@
+/**
+ * Resources for populating a development server with initial data.
+ * Also creates the initial user.
+ */
+
+
 if (Users.find().count() === 0) {
   // if no users exist, create an initial one
   var id = Accounts.createUser({

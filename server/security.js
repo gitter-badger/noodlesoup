@@ -1,3 +1,8 @@
+/**
+ * Security methods (we don't want everything to pass)
+ */
+
+
 Security.defineMethod('ifIsCurrentUserOrAdmin', {
   fetch: [],
   transform: null,
