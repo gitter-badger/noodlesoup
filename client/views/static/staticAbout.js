@@ -23,6 +23,11 @@ Template.staticAbout.helpers({
   },
   getRole: function () {
     var user = Users.findOne({username: this.username})
-    return user.roles[0] === 'pr' ? 'proofreader' : user.roles[0]
+      , role
+    role = user.roles[0] === 'pr' ? 'proofreader' : user.roles[0]
+    // prefer admin role if it exists
+    if (_.contains(user.roles, 'admin'))
+      role = 'admin'
+    return role
   }
 })
