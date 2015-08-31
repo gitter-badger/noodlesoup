@@ -21,7 +21,7 @@ Security.defineMethod('ifIsCurrentUsersPostOrAdmin', {
   fetch: [],
   transform: null,
   deny: function (type, arg, userId, doc) {
-    if (Users.findOne({_id: userId}).username !== Users.findOne({_id: doc.authorId}).username) {
+    if (Users.findOne({_id: userId}).username === Users.findOne({_id: doc.authorId}).username) {
       return false
     } else if (Roles.userIsInRole(userId, 'admin')) {
       return false
