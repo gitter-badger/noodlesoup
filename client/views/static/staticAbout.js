@@ -24,8 +24,8 @@ Template.staticAbout.helpers({
   getRole: function () {
     var user = Users.findOne({username: this.username})
       , role
-    role = user.roles[0] === 'pr' ? 'proofreader' : user.roles[0]
-    // prefer admin role if it exists
+    // prefer PR and admin roles
+    role = _.contains(user.roles, 'pr') ? 'proofreader' : user.roles[0]
     if (_.contains(user.roles, 'admin'))
       role = 'admin'
     return role
