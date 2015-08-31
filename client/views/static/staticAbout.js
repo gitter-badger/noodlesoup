@@ -20,5 +20,9 @@ Template.staticAbout.helpers({
     return Gravatar.imageUrl(emails[0].address, {
       size: 300
     })
+  },
+  getRole: function () {
+    var user = Users.findOne({username: this.username})
+    return user.roles[0] === 'pr' ? 'proofreader' : user.roles[0]
   }
 })
