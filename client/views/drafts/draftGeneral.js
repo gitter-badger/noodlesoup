@@ -26,6 +26,13 @@ Template.draftListOne.helpers({
 Template.draftEdit.helpers({
   getDoc: function () {
     return this
+  },
+  tags: function () {
+    var r = []
+    App.tags.forEach(function (e) {
+      r.push({value: e, label: e})
+    })
+    return r
   }
 })
 
