@@ -84,6 +84,22 @@ img {
   animation: pulsating $speed $ease infinite;
 }
 
+.twitter-blue {
+  background-color: #55ACEE !important;
+  color: #FFF;
+}
+
+.twitter-blue:hover {
+  color: #FFF;
+}
+
+.twitter-blue.column {
+  margin-top: -1rem !important;
+  margin-bottom: -1rem !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 @keyframes pulsating {
 $from: ();
 $to: ();
