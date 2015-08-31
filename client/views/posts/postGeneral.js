@@ -27,11 +27,11 @@ Template.postListOne.helpers({
 Template.postTag.helpers({
   posts: function () {
     _tagTrigger.depend()
-    return Posts.find({tag: this.tag_name}, {limit: Template.postTag.limit, sort: {date: -1}})
+    return Posts.find({tag: this.tag_name, draft: false}, {limit: Template.postTag.limit, sort: {date: -1}})
   },
   hasMore: function () {
     _tagTrigger.depend()
-    return !(Posts.find({tag: this.tag_name}, {draft: false}).count() <= Template.postTag.limit)
+    return !(Posts.find({tag: this.tag_name, draft: false}, {draft: false}).count() <= Template.postTag.limit)
   },
   isEpisodeReview: function () {
     if (this.tag_name === 'episode review')
@@ -54,7 +54,7 @@ Template.postTag.events({
 Template.postAuthor.helpers({
   posts: function () {
     _authorTrigger.depend()
-    return Posts.find({authorId: Users.findOne({username: this.author_name})._id}, {limit: Template.postAuthor.limit, sort: {date: -1}})
+    return Posts.find({authorId: Users.findOne({username: this.author_name})._id, draft: false}, {limit: Template.postAuthor.limit, sort: {date: -1}})
   },
   hasMore: function () {
     _authorTrigger.depend()
