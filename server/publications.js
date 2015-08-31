@@ -5,7 +5,7 @@
 
 
 Meteor.publish('posts', function () {
-  return Posts.find()
+  return Posts.find({}, {limit: 56})
 })
 
 Meteor.publish('userData', function () {
