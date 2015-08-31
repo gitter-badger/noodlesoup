@@ -3,14 +3,14 @@
  * Bigger JS chunks are in their own JS file (like postLatest)
  */
 
-
-// Variables for pagination
+// Limits for pagination
 Template.postLatest.limit = 5
 Template.postTag.limit = 5
 Template.postAuthor.limit = 5
-var _latestTrigger = new Deps.Dependency()
-  , _tagTrigger = new Deps.Dependency()
-  , _authorTrigger = new Deps.Dependency()
+
+
+var _tagTrigger = new Tracker.Dependency()
+  , _authorTrigger = new Tracker.Dependency()
 
 /*----------  ONE POST IN LISTING  ----------*/
 

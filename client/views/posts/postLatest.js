@@ -1,3 +1,5 @@
+var _latestTrigger = new Tracker.Dependency()
+
 Template.postLatest.helpers({
   posts: function () {
     _latestTrigger.depend()
