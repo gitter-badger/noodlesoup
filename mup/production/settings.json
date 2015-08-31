@@ -3,6 +3,9 @@
   "public": {
     "disqus": {
       "shortname": "noodlesoup"
+    },
+    "ga": {
+      "id": "UA-67015108-1"
     }
   }
 }
