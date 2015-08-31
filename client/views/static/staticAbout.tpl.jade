@@ -8,7 +8,8 @@
   .ui.four.column.stackable.grid.container
     each users
       .column
-        img.ui.centered.small.circular.image(src="{{getGravatarUrl emails}}")
+        a(href="/a/#{username}")
+          img.ui.centered.small.circular.image(src="{{getGravatarUrl emails}}")
         .ui.centered.header #{username} #[.ui.pointing.left.label #{getRole}]
             .sub.header(style="margin-top: 5px;") #{profile.realname}
         .noodlesoup.about.description #{profile.bio}
