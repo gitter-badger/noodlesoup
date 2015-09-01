@@ -18,6 +18,7 @@ App.schemas.Post = new SimpleSchema({
   },
   body: {
     type: String,
+    optional: true,
     label: 'The text'
   },
   tag: {

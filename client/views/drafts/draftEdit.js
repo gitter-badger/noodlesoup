@@ -25,9 +25,6 @@ Template.draftEdit.events({
     event.preventDefault()
     var form = $('#reviewPostForm')[0]
     save(form, this._id)
-  },
-  'submit #reviewPostForm': function (event) {
-
   }
 })
 
