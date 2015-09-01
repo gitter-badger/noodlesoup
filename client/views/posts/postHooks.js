@@ -17,7 +17,7 @@ AutoForm.hooks({
   updatePostForm: {
     before: {
       update: function (doc) {
-        doc.$set.body = $('.epicarea').val()
+        doc.$set.body = 'You can use _Markdown_ in your post!'
         return doc
       }
     },
