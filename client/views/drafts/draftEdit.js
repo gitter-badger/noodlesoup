@@ -2,7 +2,7 @@ function save (form, id) {
   Posts.update({_id: id}, {$set: {
     summary: form.summary.value,
     disclaimer: form.disclaimer ? form.disclaimer.value : undefined,
-    body: form.body.value,
+    body: $('.epicarea').val(),
     tag: form.tag.value
   }})
 }
@@ -25,12 +25,28 @@ Template.draftEdit.events({
     event.preventDefault()
     var form = $('#reviewPostForm')[0]
     save(form, this._id)
-  }  
+  },
+  'submit #reviewPostForm': function (event) {
+
+  }
 })
 
 Template.draftEdit.onRendered(function () {
   setInterval(function () {
     var form = $('#reviewPostForm')[0]
-    save(form, $(form).find('input[name="id"]').val())
+    save(form, $(form).find('input[name="id"]').val(y))
   }, 20000)
+})
+
+AutoForm.addHooks('reviewPostForm', {
+  before: {
+    update: function (doc) {
+      doc.$set.draft = false
+      doc.$set.body = $('.epicarea').val()
+      return doc
+    }
+  },
+  onSuccess: function (formType, result) {
+    Router.go('/p/' + this.currentDoc.slug)
+  }
 })

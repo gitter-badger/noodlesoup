@@ -3,7 +3,7 @@
   +autoForm collection="Posts" id="reviewPostForm" type="update" doc=getDoc template="semanticUI"
     +afQuickField name="summary" rows=2
     +afQuickField name="disclaimer" rows=3
-    +afQuickField name="body" rows=7
+    +epic getDoc.body
     +afQuickField name="tag" type="select" options=tags search=true
     input(type="hidden" name="id" value="#{getDoc._id}")
     +afFieldInput type="hidden" name="draft"
