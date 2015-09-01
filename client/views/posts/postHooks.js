@@ -5,19 +5,19 @@ AutoForm.hooks({
         doc.authorId = Meteor.userId()
         doc.createdAt = App.methods.getTimestamp(new Date())
         doc.date = new Date()
-        doc.body = $('.epicarea').val()
+        doc.body = 'You can use _Markdown_ in your posts!'
         return doc
       }
     },
 
     onSuccess: function (formType, result) {
-      Router.go('/')
+      Router.go('/write/drafts/' + result.slug)
     }
   },
   updatePostForm: {
     before: {
       update: function (doc) {
-        doc.$set.body = 'You can use _Markdown_ in your post!'
+        doc.$set.body = $('.epicarea').val()
         return doc
       }
     },
