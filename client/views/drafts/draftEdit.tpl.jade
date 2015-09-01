@@ -2,7 +2,7 @@
   h1 Review "#{title}"
   +autoForm collection="Posts" id="reviewPostForm" type="update" doc=getDoc template="semanticUI"
     +afQuickField name="summary" rows=2
-    +afQuickField name="body" rows=7
+    +epic name="body" rows=7
     +afQuickField name="tag" type="select" options=tags search=true
     +afFieldInput type="hidden" name="draft"
     button.ui.button.primary(type="submit") Approve
