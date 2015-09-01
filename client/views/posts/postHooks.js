@@ -4,6 +4,7 @@ AutoForm.hooks({
       insert: function (doc) {
         doc.authorId = Meteor.userId()
         doc.createdAt = App.methods.getTimestamp(new Date())
+        doc.summary = 'My great summary'
         doc.date = new Date()
         doc.body = 'You can use _Markdown_ in your posts!'
         return doc

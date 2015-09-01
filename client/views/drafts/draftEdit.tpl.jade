@@ -3,6 +3,8 @@
   +autoForm collection="Posts" id="reviewPostForm" type="update" doc=getDoc template="semanticUI"
     +afQuickField name="summary" rows=2
     +afQuickField name="disclaimer" rows=3
+    .ui.message
+      p Be sure you checked our #[a(href="/write/guidelines" target="_blank") Guidelines] before writing your post. (Opens in a new tab)
     +epic getDoc.body
     +afQuickField name="tag" type="select" options=tags search=true
     input(type="hidden" name="id" value="#{getDoc._id}")
