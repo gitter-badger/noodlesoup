@@ -36,6 +36,12 @@ Template.draftEdit.helpers({
   }
 })
 
+Template.draftEdit.events({
+  'click #save': function (event) {
+    event.preventDefault()
+  }
+})
+
 AutoForm.addHooks('reviewPostForm', {
   before: {
     update: function (doc) {
