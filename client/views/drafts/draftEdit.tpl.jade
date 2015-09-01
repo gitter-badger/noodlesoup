@@ -5,6 +5,7 @@
     +afQuickField name="disclaimer" rows=3
     +afQuickField name="body" rows=7
     +afQuickField name="tag" type="select" options=tags search=true
+    input(type="hidden" name="id" value="#{getDoc._id}")
     +afFieldInput type="hidden" name="draft"
     .ui.buttons
       button.ui.button.primary.save(type="submit") Save
