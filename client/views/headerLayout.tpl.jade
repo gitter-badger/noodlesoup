@@ -8,6 +8,8 @@
           a.noodlesoup.username(href="/a/#{currentUser.username}") #{currentUser.username}
         if isInRole 'writer'
           a.item(href="/write/new") New post
+          a.item(href="/write/drafts") Your Drafts
+        
         if isInRole 'pr'
           a.item(href="/write/drafts") Drafts
         a.item(href="/settings/general") Settings

@@ -9,7 +9,10 @@
  
 Template.draftList.helpers({
   drafts: function () {
-    return Posts.find({draft: true})
+    if (Roles.userIsInRole(Meteor.userId(), 'writer') && !Roles.userIsInRole(Meteor.userId(), 'pr'))
+      return Posts.find({draft: true, authorId: Meteor.userId()})
+    else
+      return Posts.find({draft: true})
   }
 })
 
