@@ -31,7 +31,7 @@ Template.draftEdit.events({
 Template.draftEdit.onRendered(function () {
   setInterval(function () {
     var form = $('#reviewPostForm')[0]
-    save(form, $(form).find('input[name="id"]').val(y))
+    save(form, $(form).find('input[name="id"]').val())
   }, 20000)
 })
 
