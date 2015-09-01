@@ -2,29 +2,28 @@
   .ui.large.secondary.menu
     a.active.item(href="/") Latest
     a.item(href="/reviews") Reviews
-  .ui.grid
-    .three.wide.stackable.cards
-      each firstThree
-        a.ui.fluid.card(href="/p/#{slug}")
-          .image
-            img(src="#{thumbnail}")
-          .content
-            .header #{title}
-            .meta {{getAuthor authorId}} - #{createdAt}
-            .description #{summary}
-          a.ui.red.bottom.attached.button(href="/t/#{tag}")
-            | #{tag}
-    .three.column.row
-      each lastThree
-        a.ui.fluid.card(href="/p/#{slug}")
-          .image
-            img(src="#{thumbnail}")
-          .content
-            .header #{title}
-            .meta {{getAuthor authorId}} - #{createdAt}
-            .description #{summary}
-          a.ui.red.bottom.attached.button(href="/t/#{tag}")
-            | #{tag}
+  .ui.three.wide.stackable.cards
+    each firstThree
+      a.ui.fluid.card(href="/p/#{slug}")
+        .image
+          img(src="#{thumbnail}")
+        .content
+          .header #{title}
+          .meta {{getAuthor authorId}} - #{createdAt}
+          .description #{summary}
+        a.ui.red.bottom.attached.button(href="/t/#{tag}")
+          | #{tag}
+  .ui.three.wide.stackable.cards
+    each lastThree
+      a.ui.fluid.card(href="/p/#{slug}")
+        .image
+          img(src="#{thumbnail}")
+        .content
+          .header #{title}
+          .meta {{getAuthor authorId}} - #{createdAt}
+          .description #{summary}
+        a.ui.red.bottom.attached.button(href="/t/#{tag}")
+          | #{tag}
   .ui.divided.items
     each posts
       +postListOne
