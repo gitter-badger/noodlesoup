@@ -11,7 +11,7 @@ AutoForm.hooks({
     },
 
     onSuccess: function (formType, result) {
-      Router.go('/write/drafts/' + result.slug)
+      Router.go('/write/drafts/' + Posts.findOne({_id: result}).slug)
     }
   },
   updatePostForm: {
