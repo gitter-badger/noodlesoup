@@ -37,9 +37,16 @@ Template.draftEdit.helpers({
 })
 
 Template.draftEdit.events({
-  'click #save': function (event) {
+  'click .save': function (event) {
     event.preventDefault()
-  }
+    var form = $('#reviewPostForm')[0]
+    Posts.update({_id: this._id}, {$set: {
+      summary: form.summary.value,
+      disclaimer: form.disclaimer ? form.disclaimer.value : undefined,
+      body: form.body.value,
+      tag: form.tag.value
+    }})
+  }  
 })
 
 AutoForm.addHooks('reviewPostForm', {
