@@ -138,13 +138,17 @@ $to: ();
 }
 
 #wrap {
-  min-height:100%;
-  position:relative;
+  min-height: 100%;
+  position: relative;
+}
+
+#wrap:last-child {
+  padding-bottom: 40px;
 }
 
 .footer-container {
-  position:absolute;
-  bottom:0;
-  left:0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
