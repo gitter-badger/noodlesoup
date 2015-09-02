@@ -90,5 +90,12 @@ Template.postNew.helpers({
 Template.postEdit.helpers({
   getDoc: function () {
     return this
+  },
+  tags: function () {
+    var r = []
+    App.tags.forEach(function (e) {
+      r.push({value: e, label: e})
+    })
+    return r
   }
 })
