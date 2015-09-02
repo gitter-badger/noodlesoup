@@ -136,3 +136,15 @@ $to: ();
     box-shadow: $to;
   }
 }
+
+#wrap {
+  min-height:100%;
+  position:relative;
+}
+
+.footer-container {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+}
