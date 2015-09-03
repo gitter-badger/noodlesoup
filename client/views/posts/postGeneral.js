@@ -34,9 +34,10 @@ Template.postTag.helpers({
     return !(Posts.find({tag: this.tag_name, draft: false}, {draft: false}).count() <= Template.postTag.limit)
   },
   isEpisodeReview: function () {
-    if (this.tag_name === 'episode review')
-      return true
-    return false
+    return this.tag_name === 'episode review'
+  },
+  isSpotlight: function () {
+    return this.tag_name === 'spotlight'
   }
 })
 

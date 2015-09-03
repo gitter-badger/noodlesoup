@@ -3,8 +3,14 @@
     .ui.large.secondary.menu
       a.item(href="/") Latest
       a.active.item(href="/reviews") Reviews
+      a.item(href="/spotlights") Spotlights 
+  else if isSpotlight
+    .ui.large.secondary.menu
+      a.item(href="/") Latest
+      a.item(href="/reviews") Reviews
+      a.active.item(href="/spotlights") Spotlights
   else
-    h1 Browsing #{tag_name}   
+    h1 Browsing #{tag_name}
   .ui.divided.items
     each posts
       +postListOne
