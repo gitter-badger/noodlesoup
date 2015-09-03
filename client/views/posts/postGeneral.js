@@ -25,6 +25,9 @@ Template.postListOne.helpers({
 ===================================*/
 
 Template.postTag.helpers({
+  thereArePosts: function () {
+    return Posts.find({tag: this.tag_name, draft: false}, {limit: 1}).count() > 0
+  },
   posts: function () {
     _tagTrigger.depend()
     return Posts.find({tag: this.tag_name, draft: false}, {limit: Template.postTag.limit, sort: {date: -1}})

@@ -12,7 +12,14 @@
   else
     h1 Browsing #{tag_name}
   .ui.divided.items
-    each posts
-      +postListOne
-    +if hasMore
-      button.ui.red.button.ns.loadmore Load more
+    if thereArePosts
+      each posts
+        +postListOne
+      +if hasMore
+        button.ui.red.button.ns.loadmore Load more
+    else
+      .ui.icon.message
+        i.frown.icon
+        .content
+          .header No content!
+          p Nothing here but us chickens!
