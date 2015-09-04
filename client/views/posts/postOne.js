@@ -1,6 +1,6 @@
 Template.postOne.helpers({
   setTitle: function (title) {
-  	document.title = title //- Setting the document title here and passing the title from the template ensures we are always getting whats on the page.
+  	document.title = title //- Set title from tpl data
   },
   getGravatarUrl: function (id) {
     var user = Users.findOne({_id: id})
