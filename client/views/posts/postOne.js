@@ -1,4 +1,7 @@
 Template.postOne.helpers({
+  setTitle: function (title) {
+  	document.title = title //- Setting the document title here and passing the title from the template ensures we are always getting whats on the page.
+  },
   getGravatarUrl: function (id) {
     var user = Users.findOne({_id: id})
     return Gravatar.imageUrl(user.emails[0].address)
