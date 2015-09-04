@@ -42,7 +42,7 @@ Template.postTag.helpers({
   },
   isSpotlight: function () {
     return this.tag_name === 'spotlight'
-  },
+  }
 })
 
 Template.postTag.events({
@@ -58,7 +58,7 @@ Template.postTag.events({
 
 Template.postAuthor.helpers({
   posts: function () {
-  document.title = this.author_name + " | Noodlesoup" //- Setting author name in the title
+    document.title = this.author_name + " | Noodlesoup" //- Setting author name in the title
     _authorTrigger.depend()
     return Posts.find({authorId: Users.findOne({username: this.author_name})._id, draft: false}, {limit: Template.postAuthor.limit, sort: {date: -1}})
   },

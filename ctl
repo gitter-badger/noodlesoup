@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 case $*[0]
-when 'run'
+when 'run', nil
   exec('meteor --settings mup/production/settings.json')
 when 'dep'
   raise 'No environment supplied! Try "production".' if $*[1].nil?
