@@ -1,6 +1,6 @@
 Template.postOne.helpers({
   setTitle: function (title) {
-  	document.title = title //- Set title from tpl data
+  	document.title = title + " | Noodlesoup" //- Set title from tpl data
   },
   getGravatarUrl: function (id) {
     var user = Users.findOne({_id: id})
