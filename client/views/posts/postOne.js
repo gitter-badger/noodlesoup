@@ -1,7 +1,4 @@
 Template.postOne.helpers({
-  setTitle: function (title) {
-  	document.title = title + " | Noodlesoup" //- Set title from tpl data
-  },
   getGravatarUrl: function (id) {
     var user = Users.findOne({_id: id})
     return Gravatar.imageUrl(user.emails[0].address)

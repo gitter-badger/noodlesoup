@@ -29,7 +29,6 @@ Template.postTag.helpers({
     return Posts.find({tag: this.tag_name, draft: false}, {limit: 1}).count() > 0
   },
   posts: function () {
-  	document.title = this.tag_name + " | Noodlesoup" //- Setting document title for tags
     _tagTrigger.depend()
     return Posts.find({tag: this.tag_name, draft: false}, {limit: Template.postTag.limit, sort: {date: -1}})
   },
@@ -58,7 +57,6 @@ Template.postTag.events({
 
 Template.postAuthor.helpers({
   posts: function () {
-    document.title = this.author_name + " | Noodlesoup" //- Setting author name in the title
     _authorTrigger.depend()
     return Posts.find({authorId: Users.findOne({username: this.author_name})._id, draft: false}, {limit: Template.postAuthor.limit, sort: {date: -1}})
   },
