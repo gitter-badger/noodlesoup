@@ -13,7 +13,8 @@ if (Users.find().count() === 0) {
     profile: {
       realname: 'Jona H.',
       bio: 'A cool man.'
-    }
+    },
+    rank: 5
   })
   Roles.addUsersToRoles(id, ['admin', 'writer', 'pr'])
 }

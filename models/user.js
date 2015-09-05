@@ -41,9 +41,8 @@ App.schemas.User = new SimpleSchema({
     type: String,
     optional: true
   },
-  roles: {
-    type: [String],
-    optional: true
+  rank: {
+    type: Number
   },
   profile: {
     type: App.schemas.UserProfile,

@@ -8,7 +8,6 @@ meteor-platform
 jquery
 random
 accounts-password
-alanning:roles
 aldeed:autoform
 aldeed:collection2
 d4nyll:epic
@@ -24,6 +23,7 @@ obvio171:disqus
 okgrow:iron-router-autoscroll
 ongoworks:security
 perak:markdown
+percolate:migrations
 reywood:iron-router-ga
 semantic:ui
 todda00:friendly-slugs
