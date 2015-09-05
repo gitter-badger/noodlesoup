@@ -16,7 +16,7 @@ Meteor.publish('userData', function () {
       emails: 1,
       'profile.realname': 1,
       'profile.bio': 1,
-      roles: 1
+      rank: 1
     }
   })
 })

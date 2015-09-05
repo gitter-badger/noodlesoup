@@ -2,7 +2,6 @@
  * Serverside hooks.
  */
 
-
 Accounts.onCreateUser(function (opts, user) {
   // hooray for mongodb stability!
   if (!user.profile) {
