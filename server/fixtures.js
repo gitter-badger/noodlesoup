@@ -7,11 +7,11 @@
 if (Users.find().count() === 0) {
   // if no users exist, create an initial one
   var id = Accounts.createUser({
-    username: 'schisma',
-    email: 'jona@schisma.co',
+    username: 'admin',
+    email: 'admin@example.org',
     password: 'supersecret',
     profile: {
-      realname: 'Jona H.',
+      realname: 'Ad Min',
       bio: 'A cool man.'
     }
   })
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-1',
     draft: false
@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-2',
     draft: false
@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-3',
     draft: false
@@ -62,7 +62,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-4',
     draft: false
@@ -74,7 +74,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-5',
     draft: false
@@ -86,7 +86,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-6',
     draft: false
@@ -99,7 +99,7 @@ if (process.env.NODE_ENV === 'development' && Posts.find({}).count() === 0) {
     tag: 'anime',
     createdAt: App.methods.getTimestamp(new Date()),
     date: new Date(),
-    authorId: Users.findOne({username: 'schisma'})._id,
+    authorId: Users.findOne({username: 'admin'})._id,
     thumbnail: 'http://placekitten.com/g/500/500',
     slug: 'post-7',
     draft: false
