@@ -9,6 +9,7 @@ core/client/semantic/theme.config.import.less
 core/client/semantic/theme.import.less
 
 mup/**/mup.json
+mup/**/settings.json
 
 # The bane of our existence
 .DS_Store
