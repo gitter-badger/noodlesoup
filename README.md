@@ -1,4 +1,6 @@
 #Noodlesoup
+
+[![Join the chat at https://gitter.im/ix/noodlesoup](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ix/noodlesoup?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Noodlesoup is a multi-user blogging platform that was used to power the blog at [noodlesoup.moe](http://noodlesoup.moe).
 
 ##Local installation
